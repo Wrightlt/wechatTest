@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColorTop": "#000",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "特特的第一个小程序",
+    "navigationBarTextStyle": "black"
+  }
+}

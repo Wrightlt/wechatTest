@@ -1,13 +1,39 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/test/test"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "backgroundColorTop": "#000",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "特特的第一个小程序",
-    "navigationBarTextStyle": "black"
+    "backgroundColorTop": "#000000",
+    "backgroundColorBottom": "#fff8dc",
+    "navigationBarBackgroundColor": "#fff8dc",
+    "navigationBarTitleText": "特特的小程序",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50,
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_account.png",
+        "selectedIconPath": "images/icon_account_selected.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试页面",
+        "iconPath": "images/icon_test.png",
+        "selectedIconPath": "images/icon_test_selected.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "images/icon_logs.png",
+        "selectedIconPath": "images/icon_logs_selected.png"
+      }
+    ]
   }
-}
+} 

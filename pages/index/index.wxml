@@ -1,13 +1,57 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!-- 内容 -->
+<view>{{ message }}</view>
+
+<!-- 组件属性 -->
+<view id="item-{{id}}">id: 0</view>
+<view id="item-1">id: 1</view>
+
+<!-- 条件渲染 -->
+<view wx:if="{{ condition }}">测试条件渲染</view>
+
+<!-- 关键字 -->
+<checkbox checked="{{ true }}"></checkbox>
+<checkbox checked="{{ false }}"> </checkbox>
+<checkbox checked="false"> </checkbox>
+
+<!-- 三元运算 -->
+<view hidden='{{ flag ? true : false }}'>hidden</view>
+<view hidden='{{ flag ? false : true }}'>hidden</view>
+
+<!-- 算数运算 -->
+<view>{{ a + b }} + {{ c }} + d</view>
+<view>{{ a + b + c + d}}</view>
+
+<!-- 逻辑判断 -->
+<view wx:if="{{ a + b > 1 }}">a + b > 1</view>
+
+<!-- 字符串运算 -->
+<view>{{ "hello  " + userName }}</view>
+
+<!-- 对象 -->
+<template name="testTemplate1">
+  <view>
+  for: {{ for }}   bar: {{ bar }}
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+</template>
+<template is="testTemplate1" data="{{for: a, bar: b}}"></template>
+
+<template name="testTemplate2">
+  <view>
+  a: {{ a }}  b: {{ b }}
   </view>
+</template>
+<template is="testTemplate2" data="{{...obj1, ...obj2, e: 5}}"></template>
+
+<!-- 列表渲染 -->
+<view wx:for="{{array}}" wx:key="{{ index }}">
+  {{index}}: {{item.message}}
 </view>
+
+<!-- 事件 -->
+<view id="tapTest" data-hi="WeChat" bindtap="tapName"> Click me! </view>
+
+<!-- wxs -->
+<wxs src="../../utils/tools.wxs" module="tools" />
+<view> {{tools.msg}} </view>
+<view> {{tools.bar(tools.FOO)}} </view>
+

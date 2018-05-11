@@ -5,6 +5,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    console.log("app run onLaunch")
 
     // 登录
     wx.login({
@@ -32,6 +33,12 @@ App({
         }
       }
     })
+  },
+  onShow: function() {
+    console.log("app run function: onshow")
+  },
+  onHide: function() {
+    console.log("app run function: onHide")
   },
   globalData: {
     userInfo: null
